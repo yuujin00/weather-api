@@ -2,7 +2,7 @@ name: Update Weather in README
 
 on:
   schedule:
-    - cron: "*/5 6 * * *"  # 매일 오후 3시 (UTC 기준 6시)
+    - cron: "*/5 * * * *"  # 매일 오후 3시 (UTC 기준 6시)
   workflow_dispatch:  # 수동 실행 가능
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
       - name: Python 설치
         uses: actions/setup-python@v3
         with:
-          python-version: "3.x"
+          python-version: "3.11"
 
       - name: OpenWeather API로 서울 날씨 업데이트
         run: |
